@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c18">
+  <meta name="description" content="Un universo de flores amarillas para Amidala. Un pequeño regalo que acorta cualquier distancia.">
+  <title>Un universo para Amidala · Flores amarillas</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%230b0c18'/%3E%3Cpath d='M20 5l4 11 11 4-11 4-4 11-4-11-11-4 11-4z' fill='%23f1cf79'/%3E%3Ccircle cx='20' cy='20' r='4' fill='%230b0c18'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/dedicatorias.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="wordmark" href="#bienvenida" aria-label="Entre estrellas, volver a la bienvenida"><span class="brand-star" aria-hidden="true">✧</span> ENTRE ESTRELLAS</a>
+      <span class="header-date">21 SEPTIEMBRE <span class="date-year">2026</span></span>
+      <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false"><span aria-hidden="true">Ⅱ</span><span class="motion-label">Pausar estrellas</span></button>
+    </header>
+
+    <main>
+      <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span class="little-line"></span> PARA TI, <span data-recipient>AMIDALA</span></p>
+          <h1 id="welcome-title">Hay amistades<br>que son<br><em>un universo.</em></h1>
+          <p class="intro-text" id="intro-text">Hoy, 21 de septiembre de 2026, quizá no pueda tocar a tu puerta con flores amarillas. Pero ni toda la distancia del mundo iba a dejarte sin las tuyas.</p>
+          <p class="intro-note">Así que te guardé un pequeño jardín entre las estrellas.</p>
+          <button class="primary-button" id="enter-galaxy" type="button">Descubre tus flores <span aria-hidden="true">↗</span></button>
+          <p class="button-caption">Hechas de cariño. Entregadas a años luz.</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <span class="orbit-star star-one">✧</span><span class="orbit-star star-two">✦</span><span class="orbit-star star-three">✧</span>
+          <div class="hero-glow"></div>
+          <div class="bouquet-art hero-bouquet" data-art="0"></div>
+          <div class="art-caption"><span>UN RAMO,</span><em>infinitas razones.</em></div>
+          <span class="art-coordinate">21.09.26 / PARA MI MEJOR AMIGA</span>
+        </div>
+        <div class="welcome-footer"><span class="tiny-spark" aria-hidden="true">✦</span><p>Aunque estemos lejos,<br class="mobile-break"> miramos el mismo cielo.</p><span class="footer-rule"></span><span class="footer-number">01 — 02</span></div>
+      </section>
+
+      <section class="galaxy" id="galaxy" aria-labelledby="galaxy-title" hidden>
+        <div class="galaxy-heading">
+          <button class="text-button" id="back-to-welcome" type="button"><span aria-hidden="true">←</span> La primera carta</button>
+          <p class="eyebrow">UN JARDÍN SIN DISTANCIAS</p>
+          <h2 id="galaxy-title" tabindex="-1">Tu pequeña <em>galaxia amarilla.</em></h2>
+          <p>Toca cada ramo. Hay un pedacito de cariño escondido en todos.</p>
+        </div>
+        <div class="galaxy-stage" id="galaxy-stage">
+          <div class="galaxy-aura" aria-hidden="true"></div>
+          <div class="orbital-path path-outer" aria-hidden="true"></div>
+          <div class="orbital-path path-inner" aria-hidden="true"></div>
+          <span class="stage-star stage-star-one" aria-hidden="true">✧</span>
+          <span class="stage-star stage-star-two" aria-hidden="true">✧</span>
+          <span class="stage-star stage-star-three" aria-hidden="true">✦</span>
+          <div id="bouquets"></div>
+        </div>
+        <footer class="galaxy-footer">
+          <div class="discovery"><span class="discovery-dots" id="discovery-dots" aria-hidden="true"></span><p id="discovery-count" role="status" aria-live="polite" aria-atomic="true">0 de 6 mensajes descubiertos</p></div>
+          <p class="closing-line" id="closing-line">Hay cosas bonitas que la distancia no puede cambiar.</p>
+        </footer>
+      </section>
+    </main>
+    <noscript><p class="noscript-note">Activa JavaScript en tu navegador para abrir tus ramos y leer las dedicatorias. Amidala: aunque estemos lejos, no quería dejarte sin tus flores amarillas. Gracias por ser mi mejor amiga.</p></noscript>
+  </div>
+
+  <dialog id="flower-dialog" aria-labelledby="message-title" aria-describedby="message-body">
+    <div class="message-card">
+      <button class="close-button" id="close-message" type="button" aria-label="Cerrar dedicatoria">×</button>
+      <div class="message-art-wrap" aria-hidden="true"><div class="message-halo"></div><div class="bouquet-art message-bouquet" id="message-art"></div><span class="message-spark">✧</span></div>
+      <p class="eyebrow" id="message-kind"></p>
+      <h2 id="message-title"></h2>
+      <p class="message-meaning" id="message-meaning"></p>
+      <div class="message-rule" aria-hidden="true">✦</div>
+      <p class="message-body" id="message-body"></p>
+      <p class="signature" id="signature"></p>
+      <button class="next-button" id="next-message" type="button">Otro poquito de cariño <span aria-hidden="true">→</span></button>
+      <p class="message-pagination" id="message-pagination"></p>
+    </div>
+  </dialog>
+</body>
+</html>
